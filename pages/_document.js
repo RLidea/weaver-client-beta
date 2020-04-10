@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet as StyledServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet as StyledServerStyleSheet } from 'styled-components';
 import { ServerStyleSheets as MuiServerStyleSheet } from '@material-ui/core/styles';
 import theme from '../src/theme';
 
@@ -10,16 +10,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <body>
           <Main />
@@ -30,7 +24,7 @@ export default class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
+MyDocument.getInitialProps = async ctx => {
   // Resolution order
   //
   // On the server:
@@ -60,9 +54,10 @@ MyDocument.getInitialProps = async (ctx) => {
 
   try {
     ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) => (props) => styledServerStyleSheet.collectStyles(muiServerStyleSheet.collect(<App {...props} />)),
-    });
+      originalRenderPage({
+        enhanceApp: App => props =>
+          styledServerStyleSheet.collectStyles(muiServerStyleSheet.collect(<App {...props} />)),
+      });
 
     const initialProps = await Document.getInitialProps(ctx);
 
@@ -72,13 +67,17 @@ MyDocument.getInitialProps = async (ctx) => {
       styles: (
         <>
           {initialProps.styles}
-          {muiServerStyleSheet.getStyleElement()} 
+          {muiServerStyleSheet.getStyleElement()}
           {styledServerStyleSheet.getStyleElement()}
         </>
-      )
-      // styles: [...React.Children.toArray(initialProps.styles), muiServerStyleSheet.getStyleElement(), styledServerStyleSheet.getStyleElement()],
+      ),
+      // styles: [
+      //   ...React.Children.toArray(initialProps.styles),
+      //   muiServerStyleSheet.getStyleElement(),
+      //   styledServerStyleSheet.getStyleElement(),
+      // ],
     };
   } finally {
-    styledServerStyleSheet.seal()
+    styledServerStyleSheet.seal();
   }
 };
