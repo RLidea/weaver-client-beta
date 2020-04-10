@@ -4,11 +4,12 @@ import Head from 'next/head';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { appWithTranslation } from '../i18n';
 import theme from '../src/theme';
 
 const appName = process.env.APP_NAME;
 
-export default function MyApp(props) {
+function MyApp(props) {
   const { Component, pageProps } = props;
   // const appName = 'aaa';
 
@@ -43,3 +44,5 @@ MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
+
+export default appWithTranslation(MyApp);
