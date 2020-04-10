@@ -1,4 +1,10 @@
-# Next.js with Material-UI and styled components
+# Weaver 0.3
+ 
+- Next.js
+- Express.js
+- Material-UI
+- styled components
+- ESLint
 
 ```
 cp .env-example .env

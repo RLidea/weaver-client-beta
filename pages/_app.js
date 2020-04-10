@@ -6,8 +6,11 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
+const appName = process.env.APP_NAME;
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+  // const appName = 'aaa';
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -18,9 +21,9 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <React.Fragment>
+    <>
       <Head>
-        <title>My page</title>
+        <title>{appName}</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <StylesProvider injectFirst>
@@ -32,7 +35,7 @@ export default function MyApp(props) {
           </MuiThemeProvider>
         </StyledThemeProvider>
       </StylesProvider>
-    </React.Fragment>
+    </>
   );
 }
 

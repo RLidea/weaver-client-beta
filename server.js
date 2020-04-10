@@ -13,5 +13,5 @@ const next = require('next');
   server.get('*', (req, res) => handle(req, res));
 
   await server.listen(port);
-  console.log(`> Ready on http://localhost:${port}, now Next.js is starting`);
+  console.log(`> Ready on http://localhost:${port}, now ${process.env.APP_NAME} is starting`);
 })();
