@@ -1,6 +1,6 @@
 {
   "name": "weaver",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "scripts": {
     "dev": "node server.js",
@@ -18,16 +18,19 @@
       "airbnb"
     ],
     "rules": {
-      "react/prefer-stateless-function": 0,
-      "react/jsx-filename-extension": 0,
-      "react/jsx-one-expression-per-line": 0,
-      "react/react-in-jsx-scope": "warn",
+      "react/prefer-stateless-function": "off",
+      "react/jsx-filename-extension": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "react/react-in-jsx-scope": "off",
       "react/jsx-props-no-spreading": "warn",
       "react/forbid-prop-types": "warn",
-      "react/prop-types": 0,
+      "react/prop-types": "off",
       "arrow-parens": "warn",
       "implicit-arrow-linebreak": "warn",
-      "object-curly-newline": "off"
+      "object-curly-newline": "off",
+      "import/no-unresolved": "off",
+      "react/require-default-props": "warn",
+      "jsx-a11y/anchor-has-content": "off"
     }
   },
   "prettier": {
@@ -53,13 +56,34 @@
     ]
   },
   "babel": {
-    "plugins": [
-      ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
+    "presets": [
+      "next/babel"
     ],
-    "presets": ["next/babel"]
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ],
+      [
+        "module-resolver",
+        {
+          "root": ["."],
+          "alias": {
+            "@components": "./src/components",
+            "@theme": "./src/theme",
+            "@utils": "./src/utils"
+          }
+        }
+      ]
+    ]
   },
   "dependencies": {
     "@material-ui/core": "latest",
+    "babel-plugin-module-resolver": "^4.0.0",
     "clsx": "latest",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

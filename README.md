@@ -1,4 +1,4 @@
-# Weaver 0.4
+# Weaver 0.4.1
  
 - Next.js
 - Express.js
@@ -6,6 +6,7 @@
 - styled components
 - ESLint
 - i18next
+- Import module aliasing (client)
 
 ```
 cp .env-example .env

@@ -4,8 +4,8 @@ import Head from 'next/head';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import theme from '@components/theme';
 import { appWithTranslation } from '../i18n';
-import theme from '../src/theme';
 
 const appName = process.env.APP_NAME;
 
