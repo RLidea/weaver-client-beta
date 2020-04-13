@@ -3,9 +3,9 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { Box, Button } from '@material-ui/core';
 import styled from 'styled-components';
-import ProTip from '../src/ProTip';
-import Link from '../src/Link';
-import Copyright from '../src/Copyright';
+import ProTip from '@components/ProTip';
+import Link from '@components/Link';
+import Copyright from '@components/Copyright';
 import { withTranslation } from '../i18n';
 
 const StyledButton = styled(Button)`
