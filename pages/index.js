@@ -24,10 +24,10 @@ const Index = ({ t, i18n }) => (
         {t('greeting')}, {process.env.APP_NAME}
       </Typography>
       <StyledButton type="button" onClick={() => i18n.changeLanguage('en')}>
-        {t('change-locale-en')}
+        {t('locale:en')}
       </StyledButton>
       <StyledButton type="button" onClick={() => i18n.changeLanguage('ko')}>
-        {t('change-locale-ko')}
+        {t('locale:ko')}
       </StyledButton>
       <br />
       <Link href="/about" color="secondary">
@@ -38,9 +38,5 @@ const Index = ({ t, i18n }) => (
     </Box>
   </Container>
 );
-
-Index.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
 
 export default withTranslation('common')(Index);

@@ -1,4 +1,4 @@
-# Weaver 0.4.1
+# Weaver 0.4.2
  
 - Next.js
 - Express.js

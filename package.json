@@ -1,6 +1,6 @@
 {
   "name": "weaver",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "scripts": {
     "dev": "node server.js",
@@ -71,11 +71,14 @@
       [
         "module-resolver",
         {
-          "root": ["."],
+          "root": [
+            "."
+          ],
           "alias": {
             "@components": "./src/components",
             "@theme": "./src/theme",
-            "@utils": "./src/utils"
+            "@utils": "./src/utils",
+            "@i18n": "./i18n"
           }
         }
       ]
