@@ -6,7 +6,7 @@
 - styled components
 - ESLint
 - i18next
-- Import module aliasing (client)
+- Import module aliasing
 
 ```
 cp .env-example .env

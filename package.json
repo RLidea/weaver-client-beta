@@ -18,30 +18,25 @@
       "airbnb"
     ],
     "rules": {
-      "react/prefer-stateless-function": "off",
-      "react/jsx-filename-extension": "off",
-      "react/jsx-one-expression-per-line": "off",
       "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": "off",
       "react/jsx-props-no-spreading": "warn",
       "react/forbid-prop-types": "warn",
-      "react/prop-types": "off",
-      "arrow-parens": "warn",
-      "implicit-arrow-linebreak": "warn",
-      "object-curly-newline": "off",
+      "react/prop-types": "warn",
       "import/no-unresolved": "off",
-      "react/require-default-props": "warn",
-      "jsx-a11y/anchor-has-content": "off"
+      "arrow-body-style": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/click-events-have-key-events": "warn",
+      "jsx-a11y/no-static-element-interactions": "warn",
+      "object-curly-newline": "off",
+      "max-len": "warn",
+      "no-restricted-syntax": "warn"
     }
   },
   "prettier": {
-    "printWidth": 120,
     "tabWidth": 2,
     "useTabs": false,
-    "semi": true,
     "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "arrowParens": "avoid",
     "endOfLine": "lf"
   },
   "husky": {
