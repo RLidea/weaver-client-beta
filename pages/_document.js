@@ -59,13 +59,11 @@ MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
 
   try {
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: (App) => (props) =>
-          styledServerStyleSheet.collectStyles(
-            muiServerStyleSheet.collect(<App {...props} />)
-          ),
-      });
+    ctx.renderPage = () => originalRenderPage({
+      enhanceApp: (App) => (props) => styledServerStyleSheet.collectStyles(
+        muiServerStyleSheet.collect(<App {...props} />),
+      ),
+    });
 
     const initialProps = await Document.getInitialProps(ctx);
 

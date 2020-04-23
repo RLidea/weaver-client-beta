@@ -9,7 +9,8 @@ export default function Copyright() {
       {'Copyright © '}
       <MuiLink color="inherit" href={url}>
         Your Website
-      </MuiLink>{' '}
+      </MuiLink>
+      {' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>

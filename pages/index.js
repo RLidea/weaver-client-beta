@@ -21,7 +21,9 @@ const Index = ({ t, i18n }) => (
   <Container maxWidth="sm">
     <Box my={4}>
       <Typography variant="h4" component="h1" gutterBottom>
-        {t('greeting')}, {process.env.APP_NAME}
+        {t('greeting')}
+        ,
+        {process.env.APP_NAME}
       </Typography>
       <StyledButton type="button" onClick={() => i18n.changeLanguage('en')}>
         {t('locale:en')}
