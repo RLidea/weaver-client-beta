@@ -82,7 +82,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "clsx": "latest",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "next": "latest",
     "next-i18next": "^4.2.1",
     "prop-types": "latest",
